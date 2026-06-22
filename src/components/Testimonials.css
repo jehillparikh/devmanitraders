@@ -1,0 +1,124 @@
+.testimonial-section {
+  background: var(--parchment);
+  overflow: hidden;
+}
+
+/* Leader Quote */
+.leader-quote {
+  /* ONE touch of color (Gold) for the trust signal */
+  border-left: 3px solid var(--gold);
+  padding: 8px 0 8px 32px;
+  margin-bottom: 80px;
+}
+.leader-quote blockquote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--ink);
+  line-height: 1.4;
+  max-width: 860px;
+  margin-bottom: 24px;
+}
+.leader-cite {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--graphite);
+}
+.leader-cite strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.placeholder-flag {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 0.65rem;
+  background: rgba(0,0,0,0.06);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Marquee */
+.testi-marquee {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+}
+.testi-marquee::before, .testi-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.testi-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--parchment), transparent);
+}
+.testi-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--parchment), transparent);
+}
+.testi-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollLeft 45s linear infinite;
+  padding: 0 28px;
+}
+.testi-marquee:hover .testi-track {
+  animation-play-state: paused;
+}
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 12px)); }
+}
+
+/* Testi Card */
+.testi-card {
+  background: var(--lavender-card);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testi-card p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+.testi-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  background: transparent;
+}
+.testi-name {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.testi-role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--graphite);
+}

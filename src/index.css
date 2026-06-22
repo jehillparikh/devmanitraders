@@ -1,0 +1,180 @@
+/* ============================================================
+   DEVMANI TRADERS — Global Design System
+   Monad aesthetic: parchment canvas, near-grayscale, mono type
+   ============================================================ */
+
+/* ---- TOKENS ---- */
+:root {
+  /* Canvas & Surfaces */
+  --parchment:       #f6f3f1;
+  --lavender-card:   #cfdaf5;
+  --charcoal:        #242424;
+  --ink:             #000000;
+  --graphite:        #4e4d4d;
+  --slate:           #3d3d3d;
+  --warm-stone:      #797776;
+
+  /* Accent — used sparingly (leader quote border only) */
+  --gold:            #C9A227;
+
+  /* Decorative wash gradients */
+  --grad-peach-periwinkle: linear-gradient(rgba(255,148,115,0.8) 7%, rgba(160,181,235,0.8) 83.82%);
+  --grad-mint-periwinkle:  linear-gradient(rgb(160,181,235), rgb(167,252,205));
+
+  /* Typography */
+  --font-serif: 'Source Serif 4', ui-serif, Georgia, serif;
+  --font-mono:  'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --font-sans:  'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Spacing */
+  --max-w:   1200px;
+  --section: 96px;
+
+  /* Borders & Radii */
+  --radius-pill: 100px;
+  --radius-card: 32px;
+  --radius-input: 8px;
+  --hairline: 1px solid rgba(0,0,0,0.14);
+
+  /* Elevation */
+  --shadow-card: 0 0 10px rgba(0,0,0,0.08);
+  --shadow-nav:  0 1px 0 rgba(0,0,0,0.1);
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family: var(--font-mono);
+  background: var(--parchment);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+ul { list-style:none; }
+button { font-family:inherit; cursor:pointer; border:none; background:none; }
+input { font-family:inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 3px; }
+
+/* ---- LAYOUT ---- */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section { padding: var(--section) 0; }
+.section-tight { padding: 56px 0; }
+
+/* ---- TYPOGRAPHY ---- */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1rem; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--warm-stone);
+  display: inline-block;
+}
+
+.section-head { max-width: 620px; margin-bottom: 56px; }
+.section-head p {
+  font-family: var(--font-sans);
+  color: var(--warm-stone);
+  font-size: 1rem;
+  margin-top: 14px;
+  line-height: 1.65;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 26px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.btn-primary {
+  background: var(--charcoal);
+  color: var(--parchment);
+  border: 1.5px solid var(--charcoal);
+}
+.btn-primary:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--parchment);
+  transform: translateY(-1px);
+}
+.btn-sm { padding: 8px 18px; font-size: 0.78rem; }
+
+/* ---- CHIP / PILL TAGS ---- */
+.chip {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0,0,0,0.18);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--graphite);
+  background: transparent;
+}
+
+/* ---- DIVIDER ---- */
+.rule { height: 1px; background: rgba(0,0,0,0.1); border: none; }
+
+/* ---- SCROLL REVEAL ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.22,0.61,0.36,1), transform 0.55s cubic-bezier(0.22,0.61,0.36,1);
+}
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-fade { opacity:0; transition: opacity 0.6s ease; }
+.reveal-fade.visible { opacity:1; }

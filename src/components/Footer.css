@@ -1,0 +1,100 @@
+.site-footer {
+  background: var(--charcoal);
+  color: var(--parchment);
+  padding: 80px 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 56px;
+}
+.footer-brand .brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--parchment);
+}
+.footer-brand .brand-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  margin-bottom: 16px;
+}
+.footer-brand .brand-sub svg { width: 10px; height: 10px; }
+.footer-brand p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: rgba(246, 243, 241, 0.7);
+  max-width: 300px;
+}
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(246, 243, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--parchment);
+  transition: all 0.2s ease;
+}
+.footer-social a:hover {
+  background: rgba(246, 243, 241, 0.1);
+}
+.footer-social svg { width: 16px; height: 16px; }
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--parchment);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.footer-col a, .footer-col p {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(246, 243, 241, 0.7);
+  margin-bottom: 16px;
+}
+.footer-col a:hover {
+  color: var(--parchment);
+}
+
+.footer-legal {
+  border-top: 1px dashed rgba(246, 243, 241, 0.15);
+  padding: 32px 0;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: rgba(246, 243, 241, 0.5);
+  line-height: 1.7;
+}
+.footer-legal strong {
+  color: rgba(246, 243, 241, 0.8);
+}
+.footer-bottom {
+  border-top: 1px dashed rgba(246, 243, 241, 0.15);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(246, 243, 241, 0.5);
+}
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,34 @@
+.how-section {
+  background: var(--charcoal);
+  color: var(--parchment);
+}
+.how-section .eyebrow,
+.how-section .eyebrow::before {
+  color: var(--warm-stone);
+}
+.how-section h2 { color: var(--parchment); }
+.how-section p { color: rgba(246, 243, 241, 0.7); /* parchment slightly transparent */ }
+
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.how-step {
+  padding-top: 24px;
+  border-top: 1px solid rgba(246, 243, 241, 0.15);
+}
+.how-num {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: rgba(246, 243, 241, 0.3);
+  margin-bottom: 24px;
+}
+.how-step h3 {
+  color: var(--parchment);
+  margin-bottom: 12px;
+}
+
+@media (max-width: 900px) {
+  .how-grid { grid-template-columns: 1fr; gap: 48px; }
+}
