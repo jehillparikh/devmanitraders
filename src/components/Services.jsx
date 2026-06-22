@@ -92,7 +92,7 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="tab-panel reveal" key={activeTab}>
+        <div className="tab-panel" key={activeTab}>
           <div className="tab-content">
             <div className="tab-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -104,6 +104,13 @@ export default function Services() {
             <div className="tab-chips">
               {data.chips.map(c => <span key={c} className="chip">{c}</span>)}
             </div>
+            {activeTab === 'equity' && (
+              <div style={{ marginBottom: '24px' }}>
+                <a href="https://www.kotakneo.com/open-demat-account/" target="_blank" rel="noreferrer" className="btn btn-primary btn-sm">
+                  Open an Account
+                </a>
+              </div>
+            )}
             <a href="#contact" className="tab-link">Talk to an advisor →</a>
           </div>
 
