@@ -10,7 +10,7 @@ export default function ContactCTA() {
             <p>No forms to fill in advance — a relationship manager will call you back, usually within a working day.</p>
           </div>
           <div className="contact-actions">
-            <a href="tel:7304873697" className="btn btn-primary">Call 7304873697</a>
+            <a href="tel:+912242134213" className="btn btn-primary">Call +91-22-4213 4213</a>
             <a href="mailto:contactus@devmanitraders.com" className="btn btn-outline">Email Us</a>
           </div>
         </div>

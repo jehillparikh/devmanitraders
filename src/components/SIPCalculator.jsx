@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { BLOG_POSTS } from '../data/blogs'
 import './SIPCalculator.css'
 
 export default function SIPCalculator() {
@@ -88,29 +90,17 @@ export default function SIPCalculator() {
             <div className="side-card reveal" style={{transitionDelay: '200ms'}}>
               <span className="eyebrow" style={{marginBottom: '12px'}}>Latest Insights</span>
               <div className="insight-list">
-                <div className="insight-row">
-                  <div>
-                    <div className="insight-title">SIP vs Lump Sum: Which Suits You in 2026?</div>
-                    <div className="insight-tag">Mutual Funds</div>
-                  </div>
-                  <span className="insight-arrow">→</span>
-                </div>
-                <div className="insight-row">
-                  <div>
-                    <div className="insight-title">Understanding XIRR: Your Real Rate of Return</div>
-                    <div className="insight-tag">Basics</div>
-                  </div>
-                  <span className="insight-arrow">→</span>
-                </div>
-                <div className="insight-row">
-                  <div>
-                    <div className="insight-title">What Is an STP, and When Should You Use One?</div>
-                    <div className="insight-tag">Strategy</div>
-                  </div>
-                  <span className="insight-arrow">→</span>
-                </div>
+                {BLOG_POSTS.slice(0, 3).map(post => (
+                  <Link to={`/blog/${post.slug}`} key={post.id} className="insight-row" style={{textDecoration: 'none'}}>
+                    <div>
+                      <div className="insight-title">{post.title}</div>
+                      <div className="insight-tag">{post.category}</div>
+                    </div>
+                    <span className="insight-arrow">→</span>
+                  </Link>
+                ))}
               </div>
-              <a href="#" className="view-all">View all insights →</a>
+              <Link to="/blog" className="view-all">View all insights →</Link>
             </div>
           </div>
         </div>

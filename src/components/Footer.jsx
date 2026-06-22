@@ -27,6 +27,8 @@ export default function Footer() {
             <Link to="/about">About Us</Link>
             <Link to="/team">Team</Link>
             <Link to="/services">Services</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/risk-profile">Risk Profiler</Link>
             <Link to="/resources">Resources</Link>
           </div>
           <div className="footer-col reveal">
@@ -39,7 +41,7 @@ export default function Footer() {
           <div className="footer-col reveal">
             <h4>Contact</h4>
             <p>109-110, Horniman Circle Chambers,<br/>Fort, Mumbai – 400 001</p>
-            <a href="tel:7304873697">7304873697</a>
+            <a href="tel:+912242134213">+91-22-4213 4213</a>
             <a href="mailto:contactus@devmanitraders.com">contactus@devmanitraders.com</a>
           </div>
         </div>

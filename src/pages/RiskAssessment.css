@@ -1,0 +1,107 @@
+.quiz-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--parchment);
+  border: var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 56px;
+  box-shadow: var(--shadow-card);
+}
+
+.quiz-progress {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--graphite);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.quiz-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 2px;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: var(--charcoal);
+  transition: width 0.3s ease;
+}
+
+.quiz-question {
+  font-size: 1.6rem;
+  color: var(--ink);
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.quiz-opt-btn {
+  text-align: left;
+  width: 100%;
+  padding: 20px 24px;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.quiz-opt-btn:hover {
+  background: rgba(0,0,0,0.02);
+  border-color: var(--charcoal);
+}
+
+.quiz-opt-btn.selected {
+  background: var(--lavender-card);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quiz-result-wrapper {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.quiz-result-title {
+  font-size: 2.8rem;
+  color: var(--ink);
+  margin: 16px 0 24px;
+}
+
+.quiz-result-desc {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--graphite);
+  margin-bottom: 48px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quiz-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .quiz-container { padding: 32px 20px; }
+  .quiz-question { font-size: 1.3rem; }
+  .quiz-opt-btn { padding: 16px; font-size: 0.95rem; }
+  .quiz-actions { flex-direction: column; }
+  .quiz-result-title { font-size: 2rem; }
+}

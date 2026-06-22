@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: 'About Us', href: '/about' },
   { label: 'Team', href: '/team' },
   { label: 'Services', href: '/services' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Resources', href: '/resources' },
 ]
 
@@ -28,12 +29,6 @@ export default function Nav() {
         {/* Brand */}
         <Link to="/" className="brand" onClick={close}>
           <span className="brand-name">Devmani Traders</span>
-          <span className="brand-sub">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/>
-            </svg>
-            Authorised Partner, Kotak Securities
-          </span>
         </Link>
 
         {/* Desktop links */}
@@ -51,7 +46,7 @@ export default function Nav() {
 
         {/* Desktop CTAs */}
         <div className="nav-ctas">
-          <Link to="/resources#calculator" className="btn btn-outline btn-sm">Plan Your SIP</Link>
+          <Link to="/risk-profile" className="btn btn-outline btn-sm">Risk Profiler</Link>
           <a href="#contact" className="btn btn-primary btn-sm">Talk to an Advisor</a>
         </div>
 

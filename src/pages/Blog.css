@@ -1,0 +1,108 @@
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--parchment);
+  border: var(--hairline);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.blog-card:hover {
+  background: var(--lavender-card);
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.blog-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+}
+.blog-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--graphite);
+}
+.blog-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.blog-card p {
+  font-family: var(--font-sans);
+  color: var(--graphite);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.blog-read-more {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  align-self: flex-start;
+  padding-bottom: 2px;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--graphite);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.back-link:hover {
+  color: var(--ink);
+}
+
+.article-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.article-content h2 {
+  font-size: 1.8rem;
+  margin: 48px 0 24px;
+  color: var(--ink);
+}
+.article-content p {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--graphite);
+  margin-bottom: 24px;
+}
+.article-content ul {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--graphite);
+  margin-bottom: 32px;
+  padding-left: 24px;
+}
+.article-content li {
+  margin-bottom: 16px;
+}
+.article-content strong {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}

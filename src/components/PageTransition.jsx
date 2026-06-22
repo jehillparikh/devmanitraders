@@ -12,19 +12,23 @@ export default function PageTransition({ children }) {
 
   // Re-run intersection observer for reveal animations on every page change
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible')
-          observer.unobserve(entry.target)
-        }
-      })
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' })
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' })
 
-    const els = document.querySelectorAll('.reveal, .reveal-head, .reveal-fade')
-    els.forEach(el => observer.observe(el))
+      const els = document.querySelectorAll('.reveal, .reveal-head, .reveal-fade')
+      els.forEach(el => observer.observe(el))
 
-    return () => observer.disconnect()
+      return () => observer.disconnect()
+    }, 50)
+
+    return () => clearTimeout(timer)
   }, [pathname])
 
   return (
